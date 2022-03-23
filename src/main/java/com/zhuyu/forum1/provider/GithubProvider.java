@@ -38,8 +38,8 @@ public class GithubProvider {
         try {
             Response response = client.newCall(request).execute();
             String string = response.body().toString();
-            GithubUser githubUser = JSON.parseObject(string, GithubUser.class);
-            return  githubUser;
+            GithubUser user = JSON.parseObject(string, GithubUser.class);
+            return  user;
         } catch (IOException e) {
             e.printStackTrace();
         }
